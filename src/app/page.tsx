@@ -25,9 +25,14 @@ export default function Home() {
         <section className="grid gap-10 rounded-md border border-[var(--color-border)] bg-white/85 p-6 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 overflow-hidden rounded-md border border-[var(--color-border)] bg-white">
-                <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={48} height={48} priority />
-              </div>
+              <Image
+                src="/assets/EVPICKER-LOGO-final.png"
+                alt="EV Picker"
+                width={64}
+                height={64}
+                className="h-14 w-14 rounded-md"
+                priority
+              />
               <p className="text-sm font-semibold text-slate-700">EV Picker</p>
             </div>
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
