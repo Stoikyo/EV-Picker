@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-slate-900">
@@ -22,19 +20,8 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="grid gap-10 rounded-md border border-[var(--color-border)] bg-white/85 p-6 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/assets/EVPICKER-LOGO-final.png"
-                alt="EV Picker"
-                width={72}
-                height={72}
-                className="h-16 w-16"
-                priority
-              />
-              <p className="text-sm font-semibold text-slate-700">EV Picker</p>
-            </div>
+        <section className="grid gap-10 rounded-md bg-white/80 p-8 shadow-soft lg:grid-cols-[1fr,0.85fr]">
+          <div className="flex flex-col gap-5">
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
               Stop doom-scrolling EV specs. Get a clear shortlist.
             </h1>
@@ -50,24 +37,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-md border border-[var(--color-border)] bg-white p-5 shadow-soft">
+          <div className="rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
             <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold text-slate-900">Your EV Picker report</p>
-              <span className="pill text-xs">Delivered by email</span>
+              <p className="text-sm font-semibold text-slate-900">EV Picker</p>
+              <span className="text-xs text-slate-600">Report preview</span>
             </div>
-            <div className="mt-4 space-y-4 text-sm text-slate-800">
-              {[{ title: "Recommendation 1", tag: "Best fit" }, { title: "Recommendation 2", tag: "Alt choice" }, { title: "Recommendation 3", tag: "Consider if" }].map(
-                (item) => (
-                  <div key={item.title} className="space-y-1 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-semibold">{item.title}</p>
-                      <span className="pill text-xs">{item.tag}</span>
-                    </div>
-                    <p className="text-xs text-slate-600">Why it fits · Watch-outs · Charging notes</p>
-                  </div>
-                )
-              )}
-              <div className="space-y-1 rounded-md border border-[var(--color-border)] p-3">
+            <div className="mt-2">
+              <p className="text-xl font-semibold text-slate-900">Your 3 recommendations</p>
+              <p className="text-sm text-slate-600">Delivered by email</p>
+            </div>
+            <div className="mt-5 space-y-3 text-sm text-slate-800">
+              {[1, 2, 3].map((num) => (
+                <div key={num} className="space-y-1 rounded-md bg-[var(--color-bg)] p-3">
+                  <p className="text-sm font-semibold">Recommendation {num}</p>
+                  <p className="text-xs text-slate-600">Why it fits · Watch-outs · Charging notes</p>
+                </div>
+              ))}
+              <div className="space-y-1 rounded-md bg-[var(--color-bg)] p-3">
                 <p className="text-sm font-semibold">Next steps</p>
                 <p className="text-xs text-slate-600">What to do after you pick.</p>
               </div>
