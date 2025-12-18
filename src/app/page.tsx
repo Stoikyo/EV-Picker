@@ -5,6 +5,21 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(10,102,255,0.08),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(8,79,194,0.08),transparent_35%)]" />
         <header className="mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-20 pt-14 sm:pb-24 lg:flex-row lg:items-center lg:gap-16">
           <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                <Image
+                  src="/assets/EVPICKER-LOGO-final.png"
+                  alt="EV Picker"
+                  width={56}
+                  height={56}
+                  priority
+                />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-blue-700">EV Picker</p>
+                <p className="text-xs text-slate-600">Buyer-first recommendations</p>
+              </div>
+            </div>
             <div className="flex flex-wrap items-center gap-3">
               <span className="badge bg-white text-blue-700 ring-1 ring-blue-100">
                 EV Picker · Buyer-first
