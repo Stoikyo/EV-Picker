@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-slate-900">
@@ -22,6 +24,12 @@ export default function Home() {
 
         <section className="grid gap-10 rounded-md border border-[var(--color-border)] bg-white/85 p-6 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
           <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 overflow-hidden rounded-md border border-[var(--color-border)] bg-white">
+                <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={48} height={48} priority />
+              </div>
+              <p className="text-sm font-semibold text-slate-700">EV Picker</p>
+            </div>
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
               Stop doom-scrolling EV specs. Get a clear shortlist.
             </h1>
