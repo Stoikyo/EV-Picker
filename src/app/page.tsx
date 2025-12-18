@@ -28,9 +28,9 @@ export default function Home() {
               <Image
                 src="/assets/EVPICKER-LOGO-final.png"
                 alt="EV Picker"
-                width={64}
-                height={64}
-                className="h-14 w-14 rounded-md"
+                width={72}
+                height={72}
+                className="h-16 w-16"
                 priority
               />
               <p className="text-sm font-semibold text-slate-700">EV Picker</p>
