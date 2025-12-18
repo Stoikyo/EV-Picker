@@ -16,11 +16,11 @@ export default function Home() {
 
         <div className="space-y-8 pt-6">
           <h1 className="text-5xl font-semibold leading-tight sm:text-6xl md:text-7xl">
-            A paid EV decision helper that tells you exactly what to buy.
+            Stop doing EV homework every night.
           </h1>
           <p className="max-w-3xl text-lg text-slate-700">
-            Answer a few practical questions. Get a concise report with 2–3 EVs that fit your life—and the next steps
-            to buy confidently.
+            Tell us how you drive. We’ll send back 3 EVs that fit, why they fit, and what to do next — without drowning
+            you in specs.
           </p>
           <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
             Get your EV Picker for $149
@@ -35,9 +35,9 @@ export default function Home() {
             What you get
           </h2>
           <div className="space-y-1 text-lg text-slate-800">
-            <p>Your best 2–3 EV options and why they fit you.</p>
-            <p>The specs that matter for your trips and charging—nothing else.</p>
-            <p>Next steps in plain English to move forward.</p>
+            <p>Three EV recommendations that fit your driving, budget, and charging setup.</p>
+            <p>The few specs that actually matter for your use — nothing else.</p>
+            <p>Plain-English next steps so you can move forward without second-guessing.</p>
           </div>
         </section>
 
