@@ -5,9 +5,14 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.12),transparent_45%),radial-gradient(circle_at_20%_20%,_rgba(56,189,248,0.12),transparent_35%)]" />
         <header className="mx-auto flex max-w-5xl flex-col gap-10 px-6 py-16 sm:py-24 lg:flex-row lg:items-center lg:justify-between lg:py-28">
           <div className="space-y-6">
-            <p className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-indigo-700 ring-1 ring-indigo-100 backdrop-blur dark:bg-white/10 dark:text-indigo-200 dark:ring-white/10">
-              Fresh Next.js Starter
-            </p>
+            <div className="flex flex-wrap gap-2">
+              <p className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-medium text-indigo-700 ring-1 ring-indigo-100 backdrop-blur dark:bg-white/10 dark:text-indigo-200 dark:ring-white/10">
+                Fresh Next.js Starter
+              </p>
+              <p className="inline-flex items-center gap-2 rounded-full bg-emerald-100/80 px-4 py-2 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-200 backdrop-blur dark:bg-emerald-900/30 dark:text-emerald-200 dark:ring-emerald-800/60">
+                Deployed on Vercel ✅
+              </p>
+            </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
               Build your next idea with Next.js, TypeScript, and Tailwind.
             </h1>
