@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, install dependencies and run the development server:
+Install dependencies and run the development server:
 
 ```bash
 npm install
@@ -17,9 +17,67 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Environment variables (local & Vercel)
 
-- Add local secrets to `.env.local` (already git-ignored). Use `.env.example` as a template.
-- Do **not** prefix sensitive values with `NEXT_PUBLIC_` (those are exposed to the client).
-- In Vercel, mirror the same keys in Project Settings → Environment Variables (production and preview as needed), then redeploy.
+Create `.env.local` from `.env.example` and set:
+
+```
+APP_URL=http://localhost:3000
+DATABASE_URL=postgresql://user:password@host:5432/evpicker
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_PRICE_ID=price_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+RESEND_API_KEY=re_...
+EMAIL_FROM=evpicker@mail.example.com
+ADMIN_PASSWORD=choose-a-strong-password
+```
+
+- Never commit real secrets. Avoid `NEXT_PUBLIC_` for sensitive values (those are exposed to the browser).
+- In Vercel, add the same keys under Project Settings → Environment Variables (Production + Preview).
+
+## Assets
+
+- Place static images/logos in `public/assets/` and reference them with `/assets/filename.ext` in your JSX.
+- The folder includes a `.gitkeep` so it stays in the repo even when empty.
+
+## Local database (Prisma + Postgres)
+
+- Uses Prisma with Postgres (Neon recommended). Set `DATABASE_URL` accordingly.
+- After setting the env var, generate and sync schema:
+
+```bash
+npm run prisma:generate
+npm run prisma:push
+```
+
+## Stripe setup
+
+- Create a one-time price in Stripe and set `STRIPE_PRICE_ID`.
+- Use `STRIPE_SECRET_KEY` (test or live) locally; use the matching webhook secret for each environment.
+- Set webhook endpoint to `/api/stripe/webhook`. Example for local (with Stripe CLI):
+  - `stripe listen --forward-to http://localhost:3000/api/stripe/webhook`
+- Success URL: `/success`, cancel URL: `/cancelled` (handled in code).
+
+## Email (Resend)
+
+- Set `RESEND_API_KEY` and `EMAIL_FROM` (verified domain/sender).
+- If `RESEND_API_KEY` is absent, emails are skipped (logged in server).
+
+## Admin page
+
+- `/admin/orders` is protected by a simple password gate using `ADMIN_PASSWORD` (sets an HTTP-only cookie for 6 hours).
+- You can view orders, see payment/report status, and mark a report as sent with an optional URL.
+
+## Order flow (MVP)
+
+1) User fills `/get-your-ev-picker` → client posts to `/api/checkout` → Stripe Checkout.
+2) On payment success, Stripe calls `/api/stripe/webhook`.
+3) Webhook creates/updates the Order in Postgres, calls `generateReport` (stub), and sends a confirmation email.
+4) `/success` confirms to the user; `/admin/orders` shows the order.
+
+## Deploy on Vercel
+
+- Push to GitHub; import the repo in Vercel (Next.js defaults are fine).
+- Add env vars in Vercel before deploying (see list above).
+- Use a hosted Postgres (e.g., Neon) and set `DATABASE_URL` in Vercel.
 
 ## Learn More
 

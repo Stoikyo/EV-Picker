@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  id                      String   @id @default(cuid())
+  createdAt               DateTime @default(now())
+  name                    String
+  email                   String
+  location                String
+  budgetRange             String
+  primaryUse              String
+  longestDrive            String
+  homeCharging            String
+  notes                   String?
+  stripeCheckoutSessionId String   @unique
+  stripePaymentStatus     String
+  reportStatus            String   @default("pending")
+  reportUrl               String?
+}
