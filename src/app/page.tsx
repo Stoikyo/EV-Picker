@@ -32,40 +32,24 @@ export default function Home() {
             <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
               Get your report — $149
             </a>
-            <div className="flex flex-wrap gap-2 text-sm text-slate-700">
-              <span className="pill">3 recommendations</span>
-              <span className="pill">Delivered within 48 hours</span>
-              <span className="pill">One-time payment</span>
-            </div>
+            <p className="text-sm text-slate-600">3 recommendations · Delivered within 48 hours · One-time payment</p>
           </div>
 
           <div className="rounded-md border border-[var(--color-border)] bg-white p-5 shadow-soft">
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-3 flex items-center justify-between">
               <p className="text-sm font-semibold text-slate-900">Your EV Picker report</p>
-              <span className="pill text-xs">Delivered by email</span>
+              <span className="text-xs text-slate-600">Delivered by email</span>
             </div>
-            <div className="space-y-4 text-sm text-slate-800">
-              {[{ label: "Recommendation 1", tag: "Best value" }, { label: "Recommendation 2", tag: "Longest range" }, { label: "Recommendation 3", tag: "Easiest charging" }].map(
-                (item) => (
-                  <div key={item.label} className="space-y-2 rounded-md border border-[var(--color-border)] p-3">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-semibold">{item.label}</p>
-                      <span className="pill text-xs">{item.tag}</span>
-                    </div>
-                    <div className="grid gap-1 text-xs text-slate-600">
-                      <span>Why it fits</span>
-                      <span>Watch-outs</span>
-                      <span>Charging notes</span>
-                    </div>
-                  </div>
-                )
-              )}
-              <div className="space-y-2 rounded-md border border-[var(--color-border)] bg-[var(--color-surface-tint)] p-3">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold">Next steps</p>
-                  <span className="text-xs text-slate-600">Action plan</span>
+            <div className="space-y-3 text-sm text-slate-800">
+              {[1, 2, 3].map((num) => (
+                <div key={num} className="space-y-1">
+                  <p className="text-sm font-semibold">Recommendation {num}</p>
+                  <p className="text-xs text-slate-600">Why it fits · Watch-outs · Charging notes</p>
                 </div>
-                <p className="text-xs text-slate-700">What to do after you pick.</p>
+              ))}
+              <div className="pt-2">
+                <p className="text-sm font-semibold">Next steps</p>
+                <p className="text-xs text-slate-700">Actionable moves after you pick.</p>
               </div>
             </div>
           </div>
@@ -83,7 +67,7 @@ export default function Home() {
               { title: "Avoiding dealers for now", desc: "Want clarity before stepping into a showroom." },
               { title: "Too many models", desc: "Need someone to narrow it down decisively." },
             ].map((item) => (
-              <div key={item.title} className="rounded-md border border-[var(--color-border)] bg-white p-4">
+              <div key={item.title} className="rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] p-4">
                 <p className="text-base font-semibold text-slate-900">{item.title}</p>
                 <p className="text-sm text-slate-700">{item.desc}</p>
               </div>
@@ -91,38 +75,38 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-3 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
-          <h2 className="section-heading text-2xl font-semibold">What EV Picker actually does</h2>
-          <p className="text-lg text-slate-800">
-            You answer practical questions about driving, budget, and charging. We assess trade-offs, not perfection,
-            and you always get exactly three EVs with reasons—not just specs.
-          </p>
-          <p className="text-lg text-slate-700">Three options is enough to compare without getting stuck.</p>
-        </section>
-
-        <section className="grid gap-8 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft lg:grid-cols-2">
-          <div className="space-y-3">
-            <h2 className="section-heading text-2xl font-semibold">What you get</h2>
-            <p className="text-lg text-slate-800">
-              A concise report that narrows the field and tells you what to do next—built around your real-world use.
-            </p>
+        <section className="space-y-4 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+          <h2 className="section-heading text-2xl font-semibold">What you’ll get (and how it works)</h2>
+          <div className="space-y-3 text-lg text-slate-800">
+            <p>You answer practical questions about driving, budget, and charging.</p>
+            <p>We assess trade-offs and deliver exactly three EVs with reasons—not just specs.</p>
+            <p className="text-lg text-slate-700">Three options is enough to compare without getting stuck.</p>
           </div>
-          <div className="space-y-2 text-lg text-slate-800">
-            <p>
-              <span className="font-semibold">Three EV recommendations</span> tailored to your reality.
-            </p>
-            <p>
-              <span className="font-semibold">Why each one fits</span> and what to be aware of.
-            </p>
-            <p>
-              <span className="font-semibold">Charging reality check</span> (home vs public).
-            </p>
-            <p>
-              <span className="font-semibold">Key specs that actually matter</span> for your trips.
-            </p>
-            <p>
-              <span className="font-semibold">Clear next steps</span> to move forward.
-            </p>
+          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            <div className="space-y-2 text-base text-slate-800">
+              <p>
+                <span className="font-semibold">Three EV recommendations</span> tailored to your reality.
+              </p>
+              <p>
+                <span className="font-semibold">Why each one fits</span> and what to be aware of.
+              </p>
+              <p>
+                <span className="font-semibold">Charging reality check</span> (home vs public).
+              </p>
+              <p>
+                <span className="font-semibold">Key specs that actually matter</span> for your trips.
+              </p>
+              <p>
+                <span className="font-semibold">Clear next steps</span> to move forward.
+              </p>
+            </div>
+            <div className="space-y-3 text-base text-slate-800">
+              <p>
+                <span className="font-semibold">Process:</span> Answer questions (5–7 minutes) → Pay once via Stripe →
+                We prepare and review your report → Delivered by email within 48 hours.
+              </p>
+              <p className="text-sm text-slate-700">Human-reviewed. Considered output.</p>
+            </div>
           </div>
         </section>
 
@@ -169,7 +153,7 @@ export default function Home() {
 
         <section id="pricing" className="space-y-4">
           <h2 className="section-heading text-2xl font-semibold">Pricing</h2>
-          <div className="rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-lg">
+          <div className="rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
             <p className="text-3xl font-semibold text-slate-900">$149</p>
             <p className="text-sm text-slate-600">One-time. Delivered by email. No account required.</p>
             <div className="mt-4 space-y-2 text-sm text-slate-800">
@@ -188,7 +172,7 @@ export default function Home() {
 
         <section className="space-y-4">
           <h2 className="section-heading text-2xl font-semibold">FAQ</h2>
-          <div className="space-y-3 text-base text-slate-800">
+          <div className="space-y-2 text-sm text-slate-800">
             {[
               {
                 q: "What information do you need?",
@@ -215,12 +199,9 @@ export default function Home() {
                 a: "Yes. It’s written in plain English for people who don’t want to be EV experts.",
               },
             ].map((item) => (
-              <details
-                key={item.q}
-                className="rounded-md border border-[var(--color-border)] bg-white p-3 transition hover:-translate-y-1 hover:shadow-soft"
-              >
+              <details key={item.q} className="rounded-md border border-[var(--color-border)] bg-white p-2">
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900">{item.q}</summary>
-                <p className="pt-2 text-sm text-slate-700">{item.a}</p>
+                <p className="pt-1 text-sm text-slate-700">{item.a}</p>
               </details>
             ))}
           </div>
@@ -231,11 +212,7 @@ export default function Home() {
           <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
             Get your report — $149
           </a>
-          <div className="flex flex-wrap gap-2 text-sm text-slate-700">
-            <span className="pill">3 recommendations</span>
-            <span className="pill">Delivered within 48 hours</span>
-            <span className="pill">One-time payment</span>
-          </div>
+          <p className="text-sm text-slate-600">3 recommendations · Delivered within 48 hours · One-time payment</p>
         </section>
       </main>
 
