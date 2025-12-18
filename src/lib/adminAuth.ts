@@ -3,8 +3,8 @@ import { requireEnv } from "./env";
 
 const COOKIE_NAME = "admin_auth";
 
-export function isAdminAuthed() {
-  const cookieStore = cookies();
+export async function isAdminAuthed() {
+  const cookieStore = await cookies();
   const flag = cookieStore.get(COOKIE_NAME)?.value;
   return flag === "1";
 }
@@ -14,8 +14,8 @@ export function verifyAdminPassword(input: string) {
   return input === expected;
 }
 
-export function setAdminSession() {
-  const cookieStore = cookies();
+export async function setAdminSession() {
+  const cookieStore = await cookies();
   cookieStore.set({
     name: COOKIE_NAME,
     value: "1",
@@ -27,7 +27,7 @@ export function setAdminSession() {
   });
 }
 
-export function clearAdminSession() {
-  const cookieStore = cookies();
+export async function clearAdminSession() {
+  const cookieStore = await cookies();
   cookieStore.delete(COOKIE_NAME);
 }

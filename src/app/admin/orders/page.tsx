@@ -8,9 +8,9 @@ async function handleLogin(formData: FormData) {
   "use server";
   const password = formData.get("password")?.toString() || "";
   if (verifyAdminPassword(password)) {
-    setAdminSession();
+    await setAdminSession();
   } else {
-    clearAdminSession();
+    await clearAdminSession();
   }
   revalidatePath("/admin/orders");
 }
@@ -32,12 +32,12 @@ async function markReportSent(formData: FormData) {
 
 async function signOut() {
   "use server";
-  clearAdminSession();
+  await clearAdminSession();
   revalidatePath("/admin/orders");
 }
 
 export default async function AdminOrdersPage() {
-  const authed = isAdminAuthed();
+  const authed = await isAdminAuthed();
 
   if (!authed) {
     return (
