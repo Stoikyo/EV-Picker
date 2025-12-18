@@ -17,24 +17,38 @@ export default function GetYourEvPicker() {
             Tell us about your driving. We’ll handle the EV shortlist.
           </h1>
           <p className="max-w-3xl text-lg text-slate-700">
-            This is a quick, plain-English form. No accounts or subscriptions. After payment, you’ll get an
-            email confirming your order, and we’ll send your report—usually within 48 hours.
+            Quick, plain-English form. Pay once via Stripe, get your tailored report by email—usually within 48
+            hours. No subscriptions. No dealer spam.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-slate-600">
-            <span className="badge bg-blue-50 text-blue-800 ring-1 ring-blue-100">One-time $149</span>
+            <span className="badge bg-blue-50 text-blue-800 ring-1 ring-blue-100">$149 · one-time</span>
             <span className="badge">Secure Stripe Checkout</span>
-            <span className="badge">No dealer spam</span>
+            <span className="badge">We only use your info for the report</span>
           </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.6fr,1fr]">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-semibold">Your details</h2>
-            <p className="text-sm text-slate-600">
-              We’ll use this to tailor your shortlist and send your report.
-            </p>
-            <div className="mt-6">
+            <div className="space-y-2">
+              <h2 className="text-xl font-semibold">Your details</h2>
+              <p className="text-sm text-slate-600">
+                We’ll use this to tailor your shortlist and send your report.
+              </p>
+            </div>
+            <div className="mt-6 space-y-6">
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-slate-800">About you</p>
+                <p className="text-sm text-slate-600">Helps us address you and know where you’re buying.</p>
+              </div>
               <CheckoutForm />
+              <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+                <p className="font-semibold text-slate-900">We respect your time and privacy</p>
+                <ul className="mt-2 space-y-1">
+                  <li>• Secure Stripe checkout. No subscriptions.</li>
+                  <li>• We only use your answers to build your report.</li>
+                  <li>• You’ll get a confirmation email and your report by email.</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -43,7 +57,7 @@ export default function GetYourEvPicker() {
             <ul className="mt-4 space-y-3 text-sm text-slate-700">
               <li className="flex gap-2">
                 <span className="mt-1 h-2.5 w-2.5 rounded-full bg-blue-500" />
-                You’ll be redirected to Stripe to pay securely.
+                You’ll be redirected to Stripe to pay securely ($149, one-time).
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-2.5 w-2.5 rounded-full bg-blue-500" />

@@ -75,6 +75,7 @@ export function CheckoutForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-1">
           <span className="text-sm font-semibold text-slate-800">Full name</span>
+          <span className="text-xs text-slate-500">So we can address you in the report and email.</span>
           <input
             required
             value={form.name}
@@ -85,6 +86,7 @@ export function CheckoutForm() {
         </label>
         <label className="flex flex-col gap-1">
           <span className="text-sm font-semibold text-slate-800">Email</span>
+          <span className="text-xs text-slate-500">We’ll send your confirmation and report here.</span>
           <input
             required
             type="email"
@@ -98,6 +100,7 @@ export function CheckoutForm() {
 
       <label className="flex flex-col gap-1">
         <span className="text-sm font-semibold text-slate-800">Location (city/suburb)</span>
+        <span className="text-xs text-slate-500">Helps us consider availability and charging options.</span>
         <input
           required
           value={form.location}
@@ -110,6 +113,7 @@ export function CheckoutForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-1">
           <span className="text-sm font-semibold text-slate-800">Budget range</span>
+          <span className="text-xs text-slate-500">We’ll keep recommendations within this band.</span>
           <select
             value={form.budgetRange}
             onChange={(e) => updateField("budgetRange", e.target.value)}
@@ -122,6 +126,7 @@ export function CheckoutForm() {
         </label>
         <label className="flex flex-col gap-1">
           <span className="text-sm font-semibold text-slate-800">Primary use</span>
+          <span className="text-xs text-slate-500">Helps tailor body style, space, and comfort needs.</span>
           <select
             value={form.primaryUse}
             onChange={(e) => updateField("primaryUse", e.target.value)}
@@ -137,6 +142,7 @@ export function CheckoutForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-1">
           <span className="text-sm font-semibold text-slate-800">Typical longest drive</span>
+          <span className="text-xs text-slate-500">We use this to size range and charging plan.</span>
           <select
             value={form.longestDrive}
             onChange={(e) => updateField("longestDrive", e.target.value)}
@@ -149,6 +155,7 @@ export function CheckoutForm() {
         </label>
         <label className="flex flex-col gap-1">
           <span className="text-sm font-semibold text-slate-800">Home charging access</span>
+          <span className="text-xs text-slate-500">Impacts charging advice and model fit.</span>
           <select
             value={form.homeCharging}
             onChange={(e) => updateField("homeCharging", e.target.value)}
@@ -163,6 +170,7 @@ export function CheckoutForm() {
 
       <label className="flex flex-col gap-1">
         <span className="text-sm font-semibold text-slate-800">Notes (optional)</span>
+        <span className="text-xs text-slate-500">Any must-haves, makes you like, or constraints.</span>
         <textarea
           value={form.notes}
           onChange={(e) => updateField("notes", e.target.value)}

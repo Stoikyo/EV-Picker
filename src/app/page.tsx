@@ -4,96 +4,112 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <div className="relative isolate overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(10,102,255,0.08),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(8,79,194,0.08),transparent_35%)]" />
-        <header className="mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-20 pt-14 sm:pb-24 lg:flex-row lg:items-center lg:gap-16">
-          <div className="space-y-6">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_10%_10%,rgba(10,102,255,0.08),transparent_45%),radial-gradient(circle_at_90%_0%,rgba(8,79,194,0.08),transparent_40%)]" />
+        <header className="mx-auto flex max-w-6xl flex-col gap-6 px-6 pb-12 pt-6">
+          <nav className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
             <div className="flex items-center gap-3">
-              <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <Image
                   src="/assets/EVPICKER-LOGO-final.png"
                   alt="EV Picker"
-                  width={56}
-                  height={56}
+                  width={44}
+                  height={44}
                   priority
                 />
               </div>
               <div>
                 <p className="text-sm font-semibold text-blue-700">EV Picker</p>
-                <p className="text-xs text-slate-600">Buyer-first recommendations</p>
+                <p className="text-xs text-slate-600">Buyer-first EV recommendations</p>
               </div>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="badge bg-white text-blue-700 ring-1 ring-blue-100">
-                EV Picker · Buyer-first
-              </span>
-            </div>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-              Cut through EV noise. Get a clear, confident shortlist.
-            </h1>
-            <p className="max-w-2xl text-lg text-slate-700">
-              Answer a few practical questions, pay once, and receive a tailored EV report:
-              the right 2–3 options, why they fit your life, and what to do next. No dealer spam. No endless research loops.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a className="btn btn-primary" href="/get-your-ev-picker">
-                Get your EV Picker
-              </a>
-              <a className="btn btn-secondary" href="#how-it-works">
+            <div className="hidden items-center gap-4 text-sm font-semibold text-slate-700 sm:flex">
+              <a href="#how-it-works" className="hover:text-blue-700">
                 How it works
               </a>
-              <a className="btn btn-text" href="/privacy">
-                Privacy first
+              <a href="/get-your-ev-picker" className="hover:text-blue-700">
+                Get your EV Picker
+              </a>
+              <a href="/privacy" className="hover:text-blue-700">
+                Privacy
+              </a>
+              <a href="/terms" className="hover:text-blue-700">
+                Terms
               </a>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm text-slate-600">
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                Pay once, no subscriptions
+            <a className="btn btn-primary hidden sm:inline-flex" href="/get-your-ev-picker">
+              Start now ($149)
+            </a>
+          </nav>
+
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-blue-700 ring-1 ring-blue-100">
+                $149 · one-time · Stripe checkout
               </div>
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-blue-500" />
-                Human-reviewed recommendations
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-slate-400" />
-                Report by email in under 48h
-              </div>
-            </div>
-          </div>
-          <div className="relative mt-6 w-full max-w-xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-blue-500/10">
-            <div className="mb-4 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-              <span>What you get</span>
-              <span className="rounded-full bg-blue-50 px-3 py-1 text-blue-700 ring-1 ring-blue-100">
-                Buyer-first
-              </span>
-            </div>
-            <div className="space-y-4">
-              {[
-                "Your top 2–3 EV matches with why they fit.",
-                "Key specs that actually matter for your lifestyle.",
-                "Charging + cost notes you can act on.",
-                "Plain-English next steps so you can buy confidently.",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3"
-                >
-                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-sm font-semibold text-blue-700 ring-1 ring-blue-200">
-                    ✓
-                  </span>
-                  <p className="text-sm text-slate-700">{item}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 rounded-xl bg-slate-900 px-5 py-4 text-slate-100">
-              <p className="text-sm text-slate-300">Transparent pricing</p>
-              <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-3xl font-semibold">$149</span>
-                <span className="text-sm text-slate-400">one-time</span>
-              </div>
-              <p className="mt-2 text-sm text-slate-300">
-                Pay via secure Stripe Checkout. No subscriptions. No upsells.
+              <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+                Cut through EV noise. Get a clear, confident shortlist.
+              </h1>
+              <p className="max-w-2xl text-lg text-slate-700">
+                Answer a few practical questions, pay once, and get a tailored EV report: the right 2–3 options,
+                why they fit your life, and what to do next. No dealer spam. No endless research loops.
               </p>
+              <div className="flex flex-wrap gap-3">
+                <a className="btn btn-primary" href="/get-your-ev-picker">
+                  Get your EV Picker
+                </a>
+                <a className="btn btn-secondary" href="#how-it-works">
+                  How it works
+                </a>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {[
+                  "2–3 EV matches that fit your life",
+                  "Plain-English next steps",
+                  "Delivered by email in <48h",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative w-full max-w-xl rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-blue-700">What you get</p>
+                  <p className="text-xs text-slate-600">Buyer-first recommendations, no upsells.</p>
+                </div>
+                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-100">
+                  $149 one-time
+                </div>
+              </div>
+              <div className="mt-5 space-y-3">
+                {[
+                  "A shortlist of your best 2–3 EVs with why they fit.",
+                  "Key specs that matter for your trips and charging.",
+                  "Charging + cost notes you can act on.",
+                  "Clear next steps so you can buy confidently.",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
+                    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-blue-700 ring-1 ring-blue-200">
+                      ✓
+                    </span>
+                    <p className="text-sm text-slate-700">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 rounded-xl bg-slate-900 px-5 py-4 text-slate-100">
+                <p className="text-sm text-slate-300">How it works after payment</p>
+                <ul className="mt-2 space-y-1 text-sm text-slate-200">
+                  <li>• We confirm by email and start your report.</li>
+                  <li>• You get it in your inbox—usually within 48 hours.</li>
+                  <li>• If we need anything else, we’ll reach out.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </header>
@@ -108,8 +124,8 @@ export default function Home() {
             </p>
             <h2 className="text-3xl font-semibold">Three steps, low effort</h2>
             <p className="max-w-3xl text-slate-700">
-              Keep it simple: answer a few lifestyle questions, pay once, and we’ll send a concise report. No
-              accounts to create, no endless forms.
+              Answer a few lifestyle questions, pay once, and we’ll send a concise report. No accounts to create, no
+              endless forms.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
@@ -161,6 +177,36 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <footer className="border-t border-slate-200 bg-white/80">
+          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-sm text-slate-700 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white">
+                <Image
+                  src="/assets/EVPICKER-LOGO-final.png"
+                  alt="EV Picker"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <div>
+                <p className="font-semibold">EV Picker</p>
+                <p className="text-xs text-slate-500">Buyer-first EV recommendations</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a href="/privacy" className="hover:text-blue-700">
+                Privacy
+              </a>
+              <a href="/terms" className="hover:text-blue-700">
+                Terms
+              </a>
+              <a href="mailto:hello@evpicker.com" className="hover:text-blue-700">
+                Contact
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
