@@ -2,23 +2,24 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) (or the port shown in the terminal) to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Environment variables (local & Vercel)
+
+- Add local secrets to `.env.local` (already git-ignored). Use `.env.example` as a template.
+- Do **not** prefix sensitive values with `NEXT_PUBLIC_` (those are exposed to the client).
+- In Vercel, mirror the same keys in Project Settings → Environment Variables (production and preview as needed), then redeploy.
 
 ## Learn More
 
