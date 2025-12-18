@@ -1,8 +1,16 @@
 import Stripe from "stripe";
-import { requireEnv } from "./env";
 
-const stripeSecret = requireEnv("STRIPE_SECRET_KEY");
+let stripeClient: Stripe | null = null;
 
-export const stripe = new Stripe(stripeSecret, {
-  apiVersion: "2024-10-28",
-});
+export function getStripe(): Stripe {
+  if (!stripeClient) {
+    const secret = process.env.STRIPE_SECRET_KEY;
+    if (!secret) {
+      throw new Error("Missing STRIPE_SECRET_KEY");
+    }
+    stripeClient = new Stripe(secret, {
+      apiVersion: "2024-06-20",
+    });
+  }
+  return stripeClient;
+}

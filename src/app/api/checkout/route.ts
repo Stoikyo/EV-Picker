@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { getSiteUrl, requireEnv } from "@/lib/env";
 
 type Body = {
@@ -37,6 +37,7 @@ export async function POST(req: Request) {
       notes: (body.notes || "").slice(0, 400),
     };
 
+    const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],
