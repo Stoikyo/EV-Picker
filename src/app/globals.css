@@ -3,24 +3,27 @@
 :root {
   --color-primary: #0a66ff;
   --color-primary-hover: #084fc2;
-  --color-text: #0f172a;
+  --color-ink: #0f172a;
   --color-muted: #475569;
-  --color-surface: #f8fafc;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
   --color-border: #e2e8f0;
+  --color-surface-tint: #eef4ff;
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
   --font-heading: "Fredoka", system-ui, -apple-system, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--color-surface);
-  --color-foreground: var(--color-text);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-ink);
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
 }
 
 body {
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: var(--color-bg);
+  color: var(--color-ink);
   font-family: var(--font-body);
 }
 
@@ -41,7 +44,7 @@ h6 {
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 0.375rem; /* rounded-md */
   transition: transform 150ms ease, box-shadow 150ms ease,
     background-color 150ms ease, border-color 150ms ease;
   border: 1px solid transparent;
@@ -59,7 +62,7 @@ h6 {
   background: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
-  box-shadow: 0 10px 30px rgba(10, 102, 255, 0.2);
+  box-shadow: var(--shadow-soft);
 }
 
 .btn-primary:hover {
@@ -77,16 +80,7 @@ h6 {
   background: rgba(10, 102, 255, 0.08);
 }
 
-.btn-text {
-  background: transparent;
-  color: var(--color-primary);
-  border-color: transparent;
-  padding-left: 0;
-  padding-right: 0;
-  box-shadow: none;
-}
-
-.badge {
+.pill {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -94,7 +88,27 @@ h6 {
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 600;
-  background: white;
-  border: 1px solid var(--color-border);
-  color: var(--color-muted);
+  background: var(--color-surface-tint);
+  color: var(--color-primary);
+  border: 1px solid rgba(10, 102, 255, 0.18);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.section-heading {
+  position: relative;
+  padding-left: 0.85rem;
+}
+
+.section-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  height: 1.2rem;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--color-primary);
 }
