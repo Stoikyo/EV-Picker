@@ -23,7 +23,8 @@ export async function POST(req: Request) {
     }
 
     const priceId = requireEnv("STRIPE_PRICE_ID");
-    const origin = getSiteUrl(headers().get("host") || undefined);
+    const headerList = await headers();
+    const origin = getSiteUrl(headerList.get("host") || undefined);
 
     const metadata = {
       name: body.name,
