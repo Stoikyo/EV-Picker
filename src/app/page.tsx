@@ -5,10 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--color-bg)] text-slate-900">
       <header className="border-b border-[var(--color-border)] bg-white/90">
         <div className="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-4 text-sm font-semibold text-slate-700">
-          <div className="flex items-center gap-2">
-            <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={40} height={40} priority />
-            <span className="text-base font-semibold text-slate-900">EV Picker</span>
-          </div>
+          <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={48} height={48} priority />
           <div className="hidden items-center gap-6 sm:flex">
             <a href="#how-it-works" className="hover:text-[var(--color-primary)]">
               How it works
@@ -30,12 +27,9 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-20 pt-10">
-        <section className="grid gap-10 rounded-md bg-white/85 p-8 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
+        <section className="grid gap-10 rounded-xl bg-white p-8 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-2">
-              <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={52} height={52} priority />
-              <span className="text-sm font-semibold text-slate-700">EV Picker</span>
-            </div>
+            <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={60} height={60} priority />
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
               Stop doom-scrolling EV specs. Get a clear shortlist.
             </h1>
@@ -50,19 +44,19 @@ export default function Home() {
               <p className="text-sm text-slate-600">3 picks · Delivered within 48 hours · One-time payment</p>
             </div>
           </div>
-          <div className="rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6">
             <div className="flex items-center justify-between">
               <p className="text-sm font-semibold text-slate-900">Your EV Picker report</p>
               <span className="text-xs text-slate-600">Delivered by email</span>
             </div>
             <div className="mt-4 space-y-3 text-sm text-slate-800">
               {[1, 2, 3].map((num) => (
-                <div key={num} className="rounded-md bg-[var(--color-bg)] p-3">
+                <div key={num} className="rounded-xl bg-white/90 p-3">
                   <p className="text-sm font-semibold">Recommendation {num}</p>
                   <p className="text-xs text-slate-600">Why it fits · Watch-outs · Charging notes</p>
                 </div>
               ))}
-              <div className="rounded-md bg-[var(--color-bg)] p-3">
+              <div className="rounded-xl bg-white/90 p-3">
                 <p className="text-sm font-semibold">Next steps</p>
                 <p className="text-xs text-slate-600">What to do after you pick.</p>
               </div>
@@ -78,7 +72,7 @@ export default function Home() {
               { title: "Pay once", desc: "One-time $149 via Stripe. No subscriptions." },
               { title: "Get your report", desc: "Three picks with reasons, delivered within 48 hours." },
             ].map((item) => (
-              <div key={item.title} className="rounded-md border border-[var(--color-border)] bg-white p-4 shadow-soft">
+              <div key={item.title} className="rounded-xl border border-[var(--color-border)] bg-white p-4">
                 <p className="text-base font-semibold text-slate-900">{item.title}</p>
                 <p className="text-sm text-slate-700">{item.desc}</p>
               </div>
@@ -86,7 +80,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="benefits" className="space-y-4 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+        <section id="benefits" className="space-y-4 rounded-xl border border-[var(--color-border)] bg-white p-6">
           <h2 className="text-2xl font-semibold">Why people use EV Picker</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
@@ -95,7 +89,7 @@ export default function Home() {
               { title: "Charging reality check", desc: "Home vs public considerations spelled out." },
               { title: "Human-reviewed", desc: "No dealer influence. No upsells. Just a one-time report." },
             ].map((item) => (
-              <div key={item.title} className="rounded-md bg-[var(--color-bg)] p-4">
+              <div key={item.title} className="rounded-xl bg-[var(--color-bg)] p-4">
                 <p className="text-base font-semibold text-slate-900">{item.title}</p>
                 <p className="text-sm text-slate-700">{item.desc}</p>
               </div>
@@ -110,7 +104,7 @@ export default function Home() {
               { quote: "In two days I had three real options with the reasons spelled out. Way better than weeks of tabs.", name: "Alex, first-time EV buyer" },
               { quote: "They told me what to watch for with charging, not just the brochure stats. Worth the $149.", name: "Priya, city commuter" },
             ].map((item) => (
-              <div key={item.name} className="rounded-md border border-[var(--color-border)] bg-white p-4 shadow-soft">
+              <div key={item.name} className="rounded-xl border border-[var(--color-border)] bg-white p-4">
                 <p className="text-sm text-slate-800">“{item.quote}”</p>
                 <p className="mt-2 text-xs font-semibold text-slate-700">{item.name}</p>
               </div>
@@ -118,7 +112,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-3 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+        <section className="space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-6">
           <h2 className="text-2xl font-semibold">Who we are</h2>
           <p className="text-lg text-slate-800">
             We’re EV specialists who care about clear decisions, not dealer leads. You pay once. We send a human-reviewed
@@ -126,7 +120,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section id="pricing" className="space-y-4 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+        <section id="pricing" className="space-y-4 rounded-xl border border-[var(--color-border)] bg-white p-6">
           <h2 className="text-2xl font-semibold">Pricing</h2>
           <p className="text-4xl font-semibold text-slate-900">$149</p>
           <p className="text-sm text-slate-700">One-time. Delivered by email within 48 hours. No subscriptions.</p>
@@ -164,7 +158,7 @@ export default function Home() {
                 a: "Yes. It’s written in plain English for people who don’t want to be EV experts.",
               },
             ].map((item) => (
-              <details key={item.q} className="rounded-md border border-[var(--color-border)] bg-white p-2">
+              <details key={item.q} className="rounded-xl border border-[var(--color-border)] bg-white p-2">
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900">{item.q}</summary>
                 <p className="pt-1 text-sm text-slate-700">{item.a}</p>
               </details>
@@ -172,7 +166,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-3 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+        <section className="space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-6">
           <h2 className="text-2xl font-semibold">Ready to get your shortlist?</h2>
           <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
             Get your report — $149
