@@ -45,22 +45,14 @@ export default function Home() {
             </div>
           </div>
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6">
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold text-slate-900">Your EV Picker report</p>
-              <span className="text-xs text-slate-600">Delivered by email</span>
-            </div>
-            <div className="mt-4 space-y-3 text-sm text-slate-800">
-              {[1, 2, 3].map((num) => (
-                <div key={num} className="rounded-xl bg-white/90 p-3">
-                  <p className="text-sm font-semibold">Recommendation {num}</p>
-                  <p className="text-xs text-slate-600">Why it fits · Watch-outs · Charging notes</p>
-                </div>
-              ))}
-              <div className="rounded-xl bg-white/90 p-3">
-                <p className="text-sm font-semibold">Next steps</p>
-                <p className="text-xs text-slate-600">What to do after you pick.</p>
-              </div>
-            </div>
+            <Image
+              src="/assets/hero-illustration.svg"
+              alt="EV Picker hero illustration"
+              width={640}
+              height={400}
+              className="w-full rounded-lg"
+              priority
+            />
           </div>
         </section>
 
