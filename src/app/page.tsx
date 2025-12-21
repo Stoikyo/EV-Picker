@@ -31,7 +31,7 @@ export default function Home() {
           <div className="flex flex-col gap-5">
             <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={60} height={60} priority />
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
-              Stop doom-scrolling EV specs. Get a clear shortlist.
+              Stop Doom-Scrolling EV Specs. Get a Clear Shortlist.
             </h1>
             <p className="text-lg text-slate-700">
               Tell us how you drive. We’ll send exactly three EVs that fit, why they fit, what to watch out for, and how
@@ -57,7 +57,7 @@ export default function Home() {
         </section>
 
         <section id="how-it-works" className="space-y-4">
-          <h2 className="text-2xl font-semibold">How it works</h2>
+          <h2 className="text-2xl font-semibold">How It Works</h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               { title: "Tell us about you", desc: "Driving, budget, charging—5–7 minutes." },
@@ -73,7 +73,7 @@ export default function Home() {
         </section>
 
         <section id="benefits" className="space-y-6 rounded-xl border border-[var(--color-border)] bg-white p-6">
-          <h2 className="text-2xl font-semibold">Why people use EV Picker</h2>
+          <h2 className="text-2xl font-semibold">Why People Use EV Picker</h2>
           <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
@@ -116,7 +116,7 @@ export default function Home() {
         </section>
 
         <section className="space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-6">
-          <h2 className="text-2xl font-semibold">Who we are</h2>
+          <h2 className="text-2xl font-semibold">Who We Are</h2>
           <p className="text-lg text-slate-800">
             We’re EV specialists who care about clear decisions, not dealer leads. You pay once. We send a human-reviewed
             report you can act on without becoming an EV expert.
@@ -133,7 +133,7 @@ export default function Home() {
         </section>
 
         <section id="trust" className="space-y-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-tint)] p-6">
-          <h2 className="text-2xl font-semibold text-slate-900">Trust & independence</h2>
+          <h2 className="text-2xl font-semibold text-slate-900">Trust & Independence</h2>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <p className="text-lg text-slate-800">
               No dealer influence. No subscriptions. One-time payment. Your answers are only used to build the report. If
@@ -187,7 +187,7 @@ export default function Home() {
         </section>
 
         <section className="space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-6">
-          <h2 className="text-2xl font-semibold">Ready to get your shortlist?</h2>
+          <h2 className="text-2xl font-semibold">Ready to Get Your Shortlist?</h2>
           <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
             Get your report — $149
           </a>
