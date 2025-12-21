@@ -1,78 +1,84 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-slate-900">
-      <header className="mx-auto flex max-w-[1100px] flex-col gap-8 px-6 pb-14 pt-10">
-        <div className="flex items-center justify-between text-sm font-semibold text-slate-700">
-          <span className="text-base font-semibold text-slate-900">EV Picker</span>
+      <header className="border-b border-[var(--color-border)] bg-white/90">
+        <div className="mx-auto flex max-w-[1100px] items-center justify-between px-6 py-4 text-sm font-semibold text-slate-700">
+          <div className="flex items-center gap-2">
+            <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={40} height={40} priority />
+            <span className="text-base font-semibold text-slate-900">EV Picker</span>
+          </div>
           <div className="hidden items-center gap-6 sm:flex">
             <a href="#how-it-works" className="hover:text-[var(--color-primary)]">
               How it works
             </a>
+            <a href="#benefits" className="hover:text-[var(--color-primary)]">
+              Benefits
+            </a>
             <a href="#pricing" className="hover:text-[var(--color-primary)]">
               Pricing
             </a>
-            <a href="/privacy" className="hover:text-[var(--color-primary)]">
-              Privacy
+            <a href="#faq" className="hover:text-[var(--color-primary)]">
+              FAQ
             </a>
             <a className="btn btn-primary" href="/get-your-ev-picker">
               Get report — $149
             </a>
           </div>
         </div>
+      </header>
 
-        <section className="grid gap-10 rounded-md bg-white/80 p-8 shadow-soft lg:grid-cols-[1fr,0.85fr]">
+      <main className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-20 pt-10">
+        <section className="grid gap-10 rounded-md bg-white/85 p-8 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
           <div className="flex flex-col gap-5">
+            <div className="flex items-center gap-2">
+              <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={52} height={52} priority />
+              <span className="text-sm font-semibold text-slate-700">EV Picker</span>
+            </div>
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
               Stop doom-scrolling EV specs. Get a clear shortlist.
             </h1>
-            <p className="max-w-3xl text-lg text-slate-700">
+            <p className="text-lg text-slate-700">
               Tell us how you drive. We’ll send exactly three EVs that fit, why they fit, what to watch out for, and how
               to move forward—without dealer noise or endless tabs.
             </p>
-            <div className="flex flex-col gap-2">
-              <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
+            <div className="flex flex-wrap items-center gap-4">
+              <a className="btn btn-primary" href="/get-your-ev-picker">
                 Get your report — $149
               </a>
               <p className="text-sm text-slate-600">3 picks · Delivered within 48 hours · One-time payment</p>
             </div>
           </div>
-
           <div className="rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
             <div className="flex items-center justify-between">
-              <p className="text-sm font-semibold text-slate-900">EV Picker</p>
-              <span className="text-xs text-slate-600">Report preview</span>
+              <p className="text-sm font-semibold text-slate-900">Your EV Picker report</p>
+              <span className="text-xs text-slate-600">Delivered by email</span>
             </div>
-            <div className="mt-2">
-              <p className="text-xl font-semibold text-slate-900">Your 3 recommendations</p>
-              <p className="text-sm text-slate-600">Delivered by email</p>
-            </div>
-            <div className="mt-5 space-y-3 text-sm text-slate-800">
+            <div className="mt-4 space-y-3 text-sm text-slate-800">
               {[1, 2, 3].map((num) => (
-                <div key={num} className="space-y-1 rounded-md bg-[var(--color-bg)] p-3">
+                <div key={num} className="rounded-md bg-[var(--color-bg)] p-3">
                   <p className="text-sm font-semibold">Recommendation {num}</p>
                   <p className="text-xs text-slate-600">Why it fits · Watch-outs · Charging notes</p>
                 </div>
               ))}
-              <div className="space-y-1 rounded-md bg-[var(--color-bg)] p-3">
+              <div className="rounded-md bg-[var(--color-bg)] p-3">
                 <p className="text-sm font-semibold">Next steps</p>
                 <p className="text-xs text-slate-600">What to do after you pick.</p>
               </div>
             </div>
           </div>
         </section>
-      </header>
 
-      <main className="mx-auto flex max-w-[1100px] flex-col gap-14 px-6 pb-24">
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">This is for people who…</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
+        <section id="how-it-works" className="space-y-4">
+          <h2 className="text-2xl font-semibold">How it works</h2>
+          <div className="grid gap-4 sm:grid-cols-3">
             {[
-              { title: "Feel stuck in research", desc: "Reviews and advice conflict; nothing feels clear." },
-              { title: "See specs but not real life", desc: "Range and charging numbers don’t translate to their drives." },
-              { title: "Don’t want dealer pressure", desc: "Prefer clarity before stepping into a showroom." },
-              { title: "Want a short, confident list", desc: "Not another comparison doc—just a decision they can trust." },
+              { title: "Tell us about you", desc: "Driving, budget, charging—5–7 minutes." },
+              { title: "Pay once", desc: "One-time $149 via Stripe. No subscriptions." },
+              { title: "Get your report", desc: "Three picks with reasons, delivered within 48 hours." },
             ].map((item) => (
-              <div key={item.title} className="rounded-md border border-[var(--color-border)] bg-white p-4">
+              <div key={item.title} className="rounded-md border border-[var(--color-border)] bg-white p-4 shadow-soft">
                 <p className="text-base font-semibold text-slate-900">{item.title}</p>
                 <p className="text-sm text-slate-700">{item.desc}</p>
               </div>
@@ -80,46 +86,56 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-4 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
-          <h2 className="text-2xl font-semibold">What you’ll get, plainly</h2>
-          <p className="text-lg text-slate-800">
-            You answer practical questions about driving, budget, and charging. We send three EV recommendations, why
-            each fits, what to watch out for, and charging considerations—by email within 48 hours. You know what to do
-            next.
-          </p>
-          <p className="text-lg text-slate-700">Three options is enough to compare without getting stuck.</p>
-        </section>
-
-        <section id="how-it-works" className="space-y-4">
-          <h2 className="text-2xl font-semibold">How it works</h2>
-          <div className="space-y-3 text-lg text-slate-800">
-            <p>Answer questions (5–7 minutes) about driving, budget, and charging.</p>
-            <p>Pay once ($149). We prepare and review your report.</p>
-            <p>Receive your three picks, reasons, and next steps by email within 48 hours.</p>
+        <section id="benefits" className="space-y-4 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+          <h2 className="text-2xl font-semibold">Why people use EV Picker</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { title: "Clarity fast", desc: "Three options you can act on, not another research rabbit hole." },
+              { title: "Reasons, not hype", desc: "Each pick includes why it fits and what to watch out for." },
+              { title: "Charging reality check", desc: "Home vs public considerations spelled out." },
+              { title: "Human-reviewed", desc: "No dealer influence. No upsells. Just a one-time report." },
+            ].map((item) => (
+              <div key={item.title} className="rounded-md bg-[var(--color-bg)] p-4">
+                <p className="text-base font-semibold text-slate-900">{item.title}</p>
+                <p className="text-sm text-slate-700">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section id="trust" className="space-y-3 rounded-md border border-[var(--color-border)] bg-[var(--color-surface-tint)] p-5">
-          <h2 className="text-2xl font-semibold text-slate-900">Trust & independence</h2>
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold">Testimonials</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { quote: "In two days I had three real options with the reasons spelled out. Way better than weeks of tabs.", name: "Alex, first-time EV buyer" },
+              { quote: "They told me what to watch for with charging, not just the brochure stats. Worth the $149.", name: "Priya, city commuter" },
+            ].map((item) => (
+              <div key={item.name} className="rounded-md border border-[var(--color-border)] bg-white p-4 shadow-soft">
+                <p className="text-sm text-slate-800">“{item.quote}”</p>
+                <p className="mt-2 text-xs font-semibold text-slate-700">{item.name}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-3 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+          <h2 className="text-2xl font-semibold">Who we are</h2>
           <p className="text-lg text-slate-800">
-            No dealer influence. No subscriptions. One-time payment. Your answers are only used to build the report. If
-            it’s not useful, we’ll make it right.
+            We’re EV specialists who care about clear decisions, not dealer leads. You pay once. We send a human-reviewed
+            report you can act on without becoming an EV expert.
           </p>
         </section>
 
-        <section id="pricing" className="space-y-4">
+        <section id="pricing" className="space-y-4 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
           <h2 className="text-2xl font-semibold">Pricing</h2>
-          <div className="space-y-3 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
-            <p className="text-4xl font-semibold text-slate-900">$149</p>
-            <p className="text-sm text-slate-700">One-time. Delivered by email within 48 hours.</p>
-            <p className="text-sm text-slate-700">Human-reviewed. No dealer payments. No subscriptions.</p>
-            <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
-              Get your report — $149
-            </a>
-          </div>
+          <p className="text-4xl font-semibold text-slate-900">$149</p>
+          <p className="text-sm text-slate-700">One-time. Delivered by email within 48 hours. No subscriptions.</p>
+          <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
+            Get your report — $149
+          </a>
         </section>
 
-        <section className="space-y-3">
+        <section id="faq" className="space-y-3">
           <h2 className="text-2xl font-semibold">FAQ</h2>
           <div className="space-y-2 text-sm text-slate-800">
             {[
@@ -156,8 +172,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-2xl font-semibold">Ready to stop researching?</h2>
+        <section className="space-y-3 rounded-md border border-[var(--color-border)] bg-white p-6 shadow-soft">
+          <h2 className="text-2xl font-semibold">Ready to get your shortlist?</h2>
           <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
             Get your report — $149
           </a>
