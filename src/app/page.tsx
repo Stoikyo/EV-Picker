@@ -27,7 +27,7 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex max-w-[1100px] flex-col gap-16 px-6 pb-20 pt-10">
-        <section className="grid gap-10 rounded-xl bg-white p-8 shadow-soft lg:grid-cols-[1.05fr,0.95fr]">
+        <section className="grid gap-10 rounded-xl bg-white p-8 shadow-soft md:grid-cols-2">
           <div className="flex flex-col gap-5">
             <Image src="/assets/EVPICKER-LOGO-final.png" alt="EV Picker" width={60} height={60} priority />
             <h1 className="text-5xl font-semibold leading-tight sm:text-6xl">
@@ -44,13 +44,13 @@ export default function Home() {
               <p className="text-sm text-slate-600">3 picks · Delivered within 48 hours · One-time payment</p>
             </div>
           </div>
-          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6">
+          <div className="flex items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6">
             <Image
               src="/assets/hero-illustration.svg"
               alt="EV Picker hero illustration"
               width={640}
               height={400}
-              className="w-full rounded-lg"
+              className="w-full max-w-[520px] rounded-lg"
               priority
             />
           </div>
@@ -72,20 +72,31 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="benefits" className="space-y-4 rounded-xl border border-[var(--color-border)] bg-white p-6">
+        <section id="benefits" className="space-y-6 rounded-xl border border-[var(--color-border)] bg-white p-6">
           <h2 className="text-2xl font-semibold">Why people use EV Picker</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { title: "Clarity fast", desc: "Three options you can act on, not another research rabbit hole." },
-              { title: "Reasons, not hype", desc: "Each pick includes why it fits and what to watch out for." },
-              { title: "Charging reality check", desc: "Home vs public considerations spelled out." },
-              { title: "Human-reviewed", desc: "No dealer influence. No upsells. Just a one-time report." },
-            ].map((item) => (
-              <div key={item.title} className="rounded-xl bg-[var(--color-bg)] p-4">
-                <p className="text-base font-semibold text-slate-900">{item.title}</p>
-                <p className="text-sm text-slate-700">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { title: "Clarity fast", desc: "Three options you can act on, not another research rabbit hole." },
+                { title: "Reasons, not hype", desc: "Each pick includes why it fits and what to watch out for." },
+                { title: "Charging reality check", desc: "Home vs public considerations spelled out." },
+                { title: "Human-reviewed", desc: "No dealer influence. No upsells. Just a one-time report." },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl bg-[var(--color-bg)] p-4">
+                  <p className="text-base font-semibold text-slate-900">{item.title}</p>
+                  <p className="text-sm text-slate-700">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/assets/report-preview.svg"
+                alt="Report preview"
+                width={520}
+                height={360}
+                className="w-full max-w-[480px] rounded-lg"
+              />
+            </div>
           </div>
         </section>
 
@@ -119,6 +130,23 @@ export default function Home() {
           <a className="btn btn-primary w-fit" href="/get-your-ev-picker">
             Get your report — $149
           </a>
+        </section>
+
+        <section id="trust" className="space-y-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-tint)] p-6">
+          <h2 className="text-2xl font-semibold text-slate-900">Trust & independence</h2>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <p className="text-lg text-slate-800">
+              No dealer influence. No subscriptions. One-time payment. Your answers are only used to build the report. If
+              it’s not useful, we’ll make it right.
+            </p>
+            <Image
+              src="/assets/trust-badge.svg"
+              alt="Trust badge"
+              width={320}
+              height={140}
+              className="w-full max-w-[320px] rounded-lg"
+            />
+          </div>
         </section>
 
         <section id="faq" className="space-y-3">
